@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logical Operators Examples</title>
+</head>
+<body>
+    <script>
+        console.log("Question 1: A user is allowed to log in only if their age is 18 or above and they have ID card.");
+        
+        let Age = Number(prompt("Please Enter Your Age"));
+        let CNIC= prompt("Please Enter your ID Card Number");
+   
+        
+            
+            if(Age >= 18 && !isNaN(CNIC) && CNIC != null){
+                console.log("Welcome");
+                
+            }
+            if(Age < 18 || isNaN(CNIC) || CNIC == null){
+                console.log("Your are Under Age");
+                
+            }
+
+        console.log("----------------------------------------------------------");
+        console.log("Question 2: A student passes only if Marks are 50 or above and attendance is 75% or above");
+
+        let Marks = Number(prompt("Please Enter your Marks"));
+        let Attendance = Number(prompt("Please Enter your Attendance Percentage"));
+
+        if(Marks >= 50 && Attendance >= 75){
+            console.log("Congo You are Pass");
+        }
+        else{
+            console.log("FAIL: due to low attendance or lower marks");
+        }
+
+
+        console.log("----------------------------------------------------------");
+
+        console.log("Question 3: A user gets a discount if They are a premium member or today is a sale day");
+        let users = prompt("Enter Your Membership Type premium or standrad");
+        let membership1 = "premium";
+        let membership2 = "standard";
+        let saleday = true;
+        if(users === membership1 && users != membership2 || !saleday){
+               console.log("You will get Discount");
+            
+        }
+        else{
+               console.log("You are not eligible for any discounts");
+               
+        }
+
+        console.log("----------------------------------------------------------");
+
+        console.log("Question 4: A user can log in if they entered the correct password OR they logged in using Google.");
+        let User= prompt("Enter the Password (123abc) or Login using (google) Account");
+        let Password = "123abc";
+        let Google = "google";
+        
+        if(User === Password || User === Google){
+            console.log("Welcome");
+        }
+        else{
+            console.log("Not Allowed to Login");
+        }
+
+        console.log("----------------------------------------------------------");
+
+        console.log("Question 5: A user is blocked if their account is NOT verified.");
+        let userinput = prompt("Please answer with 'yes' or 'no' if your account is verified or not");
+        let verification = (userinput === "yes");
+
+        if(!verification){
+            console.log("User is blocked");
+        }
+        else{
+            console.log("User is verified")
+        }
+
+        console.log("----------------------------------------------------------");
+        
+        console.log("Question 6: A user can place an order only if the cart is NOT empty.");
+        
+        let cart = prompt("Is Your Cart Empty? 'yes' or 'no'");
+        let check = cart === "no";
+        let out = cart === "yes"
+        if(!check || out){
+            console.log("Your cart is empty you cannot proceed to checkout");
+        }
+        else{
+            console.log("Checkout");
+        }
+
+        console.log("----------------------------------------------------------");
+
+        console.log("Question 7: A user can withdraw money only if the amount is greater than 0 AND less than or equal to balance AND the account is NOT blocked.");
+
+        let UserAmount=10000;
+        console.log("Balance", UserAmount);
+        let AccStatus = prompt("Answer With 'blocked' Or 'not blocked'");
+        let amount = Number(prompt("Enter the amount you want to withdraw"));
+        let status = AccStatus ===  "blocked";
+
+        if(amount > 0 && amount <= UserAmount && !status){
+            UserAmount = UserAmount - amount;
+            console.log("Withdrawal Successful");
+        }
+        else{
+            console.log("Invalid amount entered or your account is blocked");
+        }
+
+
+        console.log("The current balance is", UserAmount);
+
+        console.log("----------------------------------------------------------");
+                
+        console.log("Question 8: A student passes if exam marks ≥ 50 or(attendance ≥ 80 and project is submitted)");
+
+        let Mark = Number(prompt("Please Enter your Marks"));
+        let Atten = Number(prompt("Please Enter your Attendance Percentage"));
+        let proj = prompt("Have you submitted your project? 'yes' or 'no'");
+        let project = proj === "yes";
+
+        if(Mark >= 50 || (Atten >= 80 && project)){
+            console.log("Congo You are Pass");
+        }
+        else{
+            console.log("FAIL: due to low attendance or lower marks or project not subbmited");
+        }
+
+        
+        console.log("----------------------------------------------------------");
+
+        console.log("Question 9: A user can reset password only if email is correct AND (OTP is correct OR security question is correct)");
+
+        let emailInput = prompt("Enter your email");
+        let otpInput = prompt("Enter OTP (1234) or type 'skip'");
+        let securityAnswer = prompt("Answer security question (pet name = tom) or type 'skip'");
+
+        let correctEmail = "user@example.com";
+        let correctOTP = "1234";
+        let correctSecurityAnswer = "tom";
+
+        let isEmailCorrect = (emailInput === correctEmail);
+        let isOTPCorrect = (otpInput === correctOTP);
+        let isSecurityCorrect = (securityAnswer === correctSecurityAnswer);
+
+        if (isEmailCorrect && (isOTPCorrect || isSecurityCorrect)) {
+            console.log("Password reset allowed");
+        } 
+        else {
+            console.log("Password reset denied");
+        }
+
+        console.log("----------------------------------------------------------");
+
+        console.log("Question 10: A user is denied access if they are NOT an admin AND NOT a moderator");
+
+        let roleInput = prompt("Enter your role: admin / moderator / user");
+        let Admin = (roleInput === "admin");
+        let Moderator = (roleInput === "moderator");
+
+        if (!Admin && !Moderator) {
+            console.log("Access Denied");
+        } 
+        else {
+            console.log("Access Granted");
+        }
+
+
+     </script>
+</body>
+</html>
